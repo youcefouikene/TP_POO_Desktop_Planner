@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_poo_ouikene_bouyakoub_g1.CalendrierController">
+    <children>
+        <Label alignment="CENTER" layoutX="280.0" layoutY="34.0" prefHeight="36.0" prefWidth="920.0" text="Mes plannings">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+        <Pane layoutX="-11.0" layoutY="-3.0" prefHeight="611.0" prefWidth="291.0" style="-fx-background-color: #27374d;">
+            <children>
+                <Text fill="WHITE" layoutX="55.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DesktopPlanner">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+                <Hyperlink ellipsisString="" layoutX="90.0" layoutY="543.0" onAction="#seDeconnecter" prefHeight="27.0" prefWidth="118.0" style="-fx-border-color: transparent;" text="Se déconnecter" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink ellipsisString="" layoutX="119.0" layoutY="121.0" onAction="#accueilPage" prefHeight="27.0" prefWidth="63.0" style="-fx-border-color: transparent;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink ellipsisString="" layoutX="104.0" layoutY="491.0" onAction="#mesProjetsPage" prefHeight="27.0" prefWidth="90.0" style="-fx-border-color: transparent;" text="Mes Projets" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Text layoutX="140.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Hyperlink fx:id="categories" ellipsisString="" layoutX="91.0" layoutY="437.0" onAction="#switchToCategorie" prefHeight="27.0" prefWidth="121.0" style="-fx-border-color: transparent;" text="Mes Catégories" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories1" ellipsisString="" layoutX="68.0" layoutY="383.0" onAction="#switchToPlanifierManuellement" prefHeight="27.0" prefWidth="166.0" style="-fx-border-color: transparent;" text="Planifier manuellement" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories11" ellipsisString="" layoutX="78.0" layoutY="329.0" onAction="#switchToCreneaux" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: transparent;" text="Mes créneaux libres" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories111" ellipsisString="" layoutX="89.0" layoutY="276.0" onAction="#switchToRendements" prefHeight="27.0" prefWidth="128.0" style="-fx-border-color: transparent;" text="Mes rendements" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories1111" ellipsisString="" layoutX="97.0" layoutY="223.0" onAction="#switchToPlannings" prefHeight="27.0" prefWidth="109.0" style="-fx-border-color: transparent;" text="Mes plannings" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Hyperlink>
+                <Hyperlink fx:id="categories11111" ellipsisString="" layoutX="107.0" layoutY="172.0" onAction="#switchToMyTasks" prefHeight="27.0" prefWidth="89.0" style="-fx-border-color: transparent;" text="Mes tâches" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Hyperlink>
+                <Line endX="210.0" endY="7.62939453125E-6" layoutX="81.0" layoutY="96.0" startX="-100.0" stroke="WHITE" />
+            </children>
+        </Pane>
+        <ChoiceBox fx:id="choixcal" layoutX="961.0" layoutY="38.0" onAction="#remplir" prefHeight="25.0" prefWidth="222.0" />
+        <TableView fx:id="tableview" layoutX="303.0" layoutY="129.0" prefHeight="327.0" prefWidth="882.0">
+            <columns>
+                <TableColumn fx:id="jour" prefWidth="89.88763427734375" text="Jour" />
+                <TableColumn fx:id="creneau" prefWidth="92.61236572265625" text="Créneau début" />
+                <TableColumn fx:id="creneauFin" prefWidth="72.39324951171875" text="Créneau fin" />
+                <TableColumn fx:id="nomTache" prefWidth="93.63485717773438" text="Nom Tâche" />
+                <TableColumn fx:id="priorite" prefWidth="72.494384765625" text="Priorité" />
+                <TableColumn fx:id="dateLimite" prefWidth="100.095458984375" text="Date limite" />
+                <TableColumn fx:id="duree" prefWidth="65.69671630859375" text="Durée" />
+                <TableColumn fx:id="cat" prefWidth="99.92694091796875" text="Catégorie" />
+                <TableColumn fx:id="etat" prefWidth="88.0" text="Etat" />
+            <TableColumn fx:id="projet" prefWidth="119.0" text="Projet" />
+            </columns>
+        </TableView>
+        <Button layoutX="994.0" layoutY="558.0" mnemonicParsing="false" onAction="#ajoutCalendrier" text="Ajouter Calendrier" />
+        <DatePicker fx:id="dateD" layoutX="966.0" layoutY="476.0" promptText="Date début calendrier" />
+        <DatePicker fx:id="dateF" layoutX="966.0" layoutY="516.0" promptText="Date fin calendrier" />
+        <Text fx:id="message" layoutX="618.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="291.0" />
+        <Button layoutX="763.0" layoutY="504.0" mnemonicParsing="false" onAction="#delete" text="Supprimer" />
+        <Button layoutX="653.0" layoutY="504.0" mnemonicParsing="false" onAction="#modifier" text="Modifier tâche" />
+        <DatePicker fx:id="dateFinEtaler" layoutX="317.0" layoutY="502.0" promptText="Date fin calendrier" />
+        <Button layoutX="316.0" layoutY="542.0" mnemonicParsing="false" onAction="#etaler" text="Étaler calendrier" />
+        <Text fx:id="prjcomplt" layoutX="327.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="250.0" />
+        <Text fx:id="tskscomplt" layoutX="327.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="250.0" />
+      <Button fx:id="deletecalendar" layoutX="432.0" layoutY="543.0" mnemonicParsing="false" onAction="#deleteCalendar" text="Supprimer calendrier" />
+    </children>
+</AnchorPane>

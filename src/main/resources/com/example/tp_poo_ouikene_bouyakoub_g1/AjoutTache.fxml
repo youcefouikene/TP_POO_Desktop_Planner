@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_poo_ouikene_bouyakoub_g1.AjoutTacheSimpleController">
+    <children>
+        <Label alignment="CENTER" layoutX="287.0" layoutY="11.0" prefHeight="68.0" prefWidth="509.0" text="Ajouter tâche simple">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+        <Pane layoutX="-11.0" layoutY="-3.0" prefHeight="611.0" prefWidth="291.0" style="-fx-background-color: #27374d;">
+            <children>
+                <Text fill="WHITE" layoutX="55.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DesktopPlanner">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+                <Hyperlink ellipsisString="" layoutX="90.0" layoutY="543.0" onAction="#seDeconnecter" prefHeight="27.0" prefWidth="118.0" style="-fx-border-color: transparent;" text="Se déconnecter" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink ellipsisString="" layoutX="119.0" layoutY="121.0" onAction="#accueilPage" prefHeight="27.0" prefWidth="63.0" style="-fx-border-color: transparent;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink ellipsisString="" layoutX="104.0" layoutY="491.0" onAction="#mesProjetsPage" prefHeight="27.0" prefWidth="90.0" style="-fx-border-color: transparent;" text="Mes Projets" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Text layoutX="140.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Hyperlink fx:id="categories" ellipsisString="" layoutX="91.0" layoutY="437.0" onAction="#switchToCategorie" prefHeight="27.0" prefWidth="121.0" style="-fx-border-color: transparent;" text="Mes Catégories" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories1" ellipsisString="" layoutX="68.0" layoutY="383.0" onAction="#switchToPlanifierManuellement" prefHeight="27.0" prefWidth="166.0" style="-fx-border-color: transparent;" text="Planifier manuellement" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories11" ellipsisString="" layoutX="78.0" layoutY="329.0" onAction="#switchToCreneaux" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: transparent;" text="Mes créneaux libres" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories111" ellipsisString="" layoutX="89.0" layoutY="276.0" onAction="#switchToRendements" prefHeight="27.0" prefWidth="128.0" style="-fx-border-color: transparent;" text="Mes rendements" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories1111" ellipsisString="" layoutX="97.0" layoutY="223.0" onAction="#switchToPlannings" prefHeight="27.0" prefWidth="109.0" style="-fx-border-color: transparent;" text="Mes plannings" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Hyperlink>
+                <Hyperlink fx:id="categories11111" ellipsisString="" layoutX="107.0" layoutY="172.0" onAction="#switchToMyTasks" prefHeight="27.0" prefWidth="89.0" style="-fx-border-color: transparent;" text="Mes tâches" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Hyperlink>
+                <Line endX="210.0" endY="7.62939453125E-6" layoutX="81.0" layoutY="96.0" startX="-100.0" stroke="WHITE" />
+            </children>
+        </Pane>
+        <TextField fx:id="nomTache" layoutX="338.0" layoutY="115.0" prefHeight="25.0" prefWidth="201.0" />
+        <Label layoutX="338.0" layoutY="93.0" text="Nom tâche * " />
+        <Label layoutX="338.0" layoutY="160.0" text="Durée tâche * " />
+        <Label layoutX="338.0" layoutY="227.0" text="Date limite * " />
+        <DatePicker fx:id="deadline" layoutX="338.0" layoutY="249.0" prefHeight="25.0" prefWidth="201.0" />
+        <Label layoutX="341.0" layoutY="292.0" text="Priorité * " />
+        <RadioButton fx:id="low" layoutX="340.0" layoutY="317.0" mnemonicParsing="false" selected="true" text="LOW">
+            <font>
+                <Font size="13.0" />
+            </font>
+            <toggleGroup>
+                <ToggleGroup fx:id="Priorite" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="medium" layoutX="429.0" layoutY="317.0" mnemonicParsing="false" text="MEDIUM" toggleGroup="$Priorite">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="higt" layoutX="530.0" layoutY="317.0" mnemonicParsing="false" text="HIGH" toggleGroup="$Priorite">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </RadioButton>
+        <TextField fx:id="periodicite" layoutX="338.0" layoutY="376.0" prefHeight="25.0" prefWidth="201.0" text="0" />
+        <Label layoutX="338.0" layoutY="354.0" text="Periodicité" />
+        <Label layoutX="338.0" layoutY="414.0" text="Projet " />
+        <Button layoutX="642.0" layoutY="569.0" mnemonicParsing="false" onAction="#ajoutTacheSimple" text="Ajouter la tâche" />
+        <Text fx:id="message" layoutX="341.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="396.13671875" />
+        <TextField fx:id="dureeTacheHeures" layoutX="338.0" layoutY="182.0" promptText="Heures" />
+        <TextField fx:id="dureeTacheMinutes" layoutX="504.0" layoutY="182.0" promptText="Minutes" />
+        <Label layoutX="338.0" layoutY="476.0" text="Catégorie * " />
+        <ChoiceBox fx:id="Categories" layoutX="338.0" layoutY="495.0" prefHeight="25.0" prefWidth="201.0" />
+        <Button layoutX="569.0" layoutY="569.0" mnemonicParsing="false" onAction="#revenir" text="Annuler" />
+      <ChoiceBox fx:id="choice" layoutX="338.0" layoutY="432.0" prefHeight="25.0" prefWidth="201.0" />
+    </children>
+</AnchorPane>

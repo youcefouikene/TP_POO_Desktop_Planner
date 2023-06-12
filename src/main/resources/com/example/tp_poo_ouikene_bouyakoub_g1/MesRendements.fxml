@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_poo_ouikene_bouyakoub_g1.MesRendementsController">
+    <children>
+        <Pane layoutX="-11.0" layoutY="-3.0" prefHeight="611.0" prefWidth="291.0" style="-fx-background-color: #27374d;">
+            <children>
+                <Text fill="WHITE" layoutX="55.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DesktopPlanner">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+                <Hyperlink ellipsisString="" layoutX="90.0" layoutY="543.0" onAction="#seDeconnecter" prefHeight="27.0" prefWidth="170.0" style="-fx-border-color: transparent;" text="Se déconnecter" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink ellipsisString="" layoutX="119.0" layoutY="121.0" onAction="#accueilPage" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: transparent;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink ellipsisString="" layoutX="104.0" layoutY="491.0" onAction="#mesProjetsPage" prefHeight="27.0" prefWidth="148.0" style="-fx-border-color: transparent;" text="Mes Projets" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Text layoutX="140.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Hyperlink fx:id="categories" ellipsisString="" layoutX="91.0" layoutY="437.0" onAction="#switchToCategorie" prefHeight="27.0" prefWidth="170.0" style="-fx-border-color: transparent;" text="Mes Catégories" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories1" ellipsisString="" layoutX="68.0" layoutY="383.0" onAction="#switchToPlanifierManuellement" prefHeight="27.0" prefWidth="199.0" style="-fx-border-color: transparent;" text="Planifier manuellement" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories11" ellipsisString="" layoutX="78.0" layoutY="329.0" onAction="#switchToCreneaux" prefHeight="27.0" prefWidth="190.0" style="-fx-border-color: transparent;" text="Mes créneaux libres" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories111" ellipsisString="" layoutX="89.0" layoutY="276.0" onAction="#switchToRendements" prefHeight="27.0" prefWidth="172.0" style="-fx-border-color: transparent;" text="Mes rendements" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Hyperlink>
+                <Hyperlink fx:id="categories1111" ellipsisString="" layoutX="97.0" layoutY="223.0" onAction="#switchToPlannings" prefHeight="27.0" prefWidth="164.0" style="-fx-border-color: transparent;" text="Mes plannings" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Hyperlink>
+                <Hyperlink fx:id="categories11111" ellipsisString="" layoutX="107.0" layoutY="172.0" onAction="#switchToMyTasks" prefHeight="27.0" prefWidth="158.0" style="-fx-border-color: transparent;" text="Mes tâches" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Hyperlink>
+                <Line endX="210.0" endY="7.62939453125E-6" layoutX="81.0" layoutY="96.0" startX="-100.0" stroke="WHITE" />
+            </children>
+        </Pane>
+      <Text layoutX="329.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Période" />
+      <ChoiceBox fx:id="periode" layoutX="328.0" layoutY="45.0" onAction="#setData" prefHeight="26.0" prefWidth="263.0" />
+      <BarChart fx:id="barChart" layoutX="317.0" layoutY="231.0" prefHeight="320.0" prefWidth="511.0" style="-fx-border-color: #27374d;">
+        <xAxis>
+          <CategoryAxis label="Jours" side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" label="Rendement" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Text layoutX="317.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rendement journalier de chaque jour du planning" textAlignment="CENTER" wrappingWidth="510.99999999999994">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+      <Text layoutX="328.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moyenne du rendement journalier" underline="true" />
+      <Text layoutX="328.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre d'encouragements obtenus" underline="true" />
+      <Pane layoutX="867.0" layoutY="362.0" prefHeight="222.0" prefWidth="290.0" style="-fx-background-color: EEEEEE;">
+         <children>
+            <ChoiceBox fx:id="day" layoutX="21.0" layoutY="45.0" onAction="#fillDayInfo" prefWidth="150.0" />
+            <Text layoutX="21.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner le jour pour avoir plus de détails" wrappingWidth="245.69050612225624" />
+            <Text layoutX="22.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de tâches complétées" underline="true" />
+            <Text layoutX="22.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rendement journalier" underline="true" />
+            <Text layoutX="23.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de tâches prévues" underline="true" />
+            <Text fx:id="rendementDay" layoutX="221.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="57.44385568460939" />
+            <Text fx:id="completedTasksDay" layoutX="194.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="88.64664572862932" />
+            <Text fx:id="totalTasksDay" layoutX="175.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.62906760362932" />
+            <ProgressBar fx:id="progress3" layoutX="143.0" layoutY="101.0" prefHeight="20.0" prefWidth="73.0" progress="0.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="866.0" layoutY="175.0" prefHeight="169.0" prefWidth="291.0" style="-fx-background-color: EEEEEE;">
+         <children>
+            <Text layoutX="22.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le jour le plus rentable" underline="true" />
+            <Text layoutX="21.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de tâches complétées" underline="true" />
+            <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rendement journalier" underline="true" />
+            <Text layoutX="21.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de tâches prévues" underline="true" />
+            <Text fx:id="jourPlusRentable" layoutX="151.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="123.9529166933587" />
+            <Text fx:id="rendementJr" layoutX="236.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="48.50288482880421" />
+            <Text fx:id="completedTasksJr" layoutX="195.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="85.8723502871087" />
+            <Text fx:id="totalTasksJr" layoutX="173.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="85.8723502871087" />
+            <ProgressBar fx:id="progress2" layoutX="143.0" layoutY="54.0" prefHeight="20.0" prefWidth="90.0" progress="0.0" />
+         </children>
+      </Pane>
+      <Text layoutX="328.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de tâches complétées" underline="true" />
+      <Text layoutX="328.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de projets complétés" underline="true" />
+      <Text fx:id="moyenneRendement" layoutX="671.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="76.06228599724841" />
+      <Text fx:id="encouragement" layoutX="530.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="76.06228599724841" />
+      <Text fx:id="tasksCompletedPeriode" layoutX="499.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="76.06228599724841" />
+      <Text fx:id="completedProjects" layoutX="493.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="76.06228599724841" />
+      <Pane layoutX="866.0" layoutY="16.0" prefHeight="149.0" prefWidth="290.0" style="-fx-background-color: EEEEEE;">
+         <children>
+            <Text layoutX="17.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre et type de badges gagnés" underline="true" />
+            <Text layoutX="17.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BADGE.MEDIUM" />
+            <Text layoutX="17.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BADGE.GOOD" />
+            <Text layoutX="17.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BADGE.EXCELLENT" />
+            <Text layoutX="17.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BADGE.VERYGOOD" />
+            <Text fx:id="badgeMedium" layoutX="118.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="133.87027016391892" />
+            <Text fx:id="badgeGood" layoutX="104.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="133.87027016391892" />
+            <Text fx:id="badgeVeryGood" layoutX="136.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="133.87027016391892" />
+            <Text fx:id="badgeExcellent" layoutX="135.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="133.87027016391892" />
+         </children>
+      </Pane>
+      <ProgressBar fx:id="progress1" layoutX="516.0" layoutY="95.0" prefHeight="20.0" prefWidth="150.0" progress="0.0" />
+    </children>
+</AnchorPane>
